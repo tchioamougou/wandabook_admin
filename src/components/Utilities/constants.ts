@@ -1,5 +1,5 @@
-export const subscriptionCollection = "673cb3a7000e8439bf28"
-export const bookCollection = "6746f47200166b7cc73e";
-export const suggestionCollection = '67482bd7000da9947274';
-export const patronCollection = '671bb91d000cd2063080';
-export const catalogueCollection = "67bdb8c2000b677332a8";
+export const subscriptionCollection = import.meta.env.VITE_APP_SUBSCRIPTION_COLLECTION_ID;
+export const bookCollection = import.meta.env.VITE_APP_BOOK_COLLECTION_ID;
+export const suggestionCollection = import.meta.env.VITE_APP_SUGGESTION_COLLECTION_ID;
+export const patronCollection = import.meta.env.VITE_APP_PATRON_COLLECTION_ID;
+export const catalogueCollection = import.meta.env.VITE_APP_CATALOGUE_COLLECTION_ID;

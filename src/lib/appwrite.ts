@@ -14,10 +14,10 @@ export const getDocuments = async () => {
         import.meta.env.VITE_APP_ACTIVITY_DATABASE_ID,
         import.meta.env.VITE_APP_PATRON_COLLECTION_ID,
         [
-                            Query.orderDesc('$createdAt'), // Ajouté : Ordonne les documents par 'createddate' en ordre décroissant
-                            Query.limit(100), // Ajouté : Limite le nombre de documents retournés à 100
-                           Query.isNotNull('barcode'),
-                           Query.notEqual('barcode',"") // Ajouté : Filtre les documents pour ne retourner que ceux avec le statut "active"
+            Query.orderDesc('$createdAt'), // Ajouté : Ordonne les documents par 'createddate' en ordre décroissant
+            Query.limit(100), // Ajouté : Limite le nombre de documents retournés à 100
+            Query.isNotNull('barcode'),
+            Query.notEqual('barcode', "") // Ajouté : Filtre les documents pour ne retourner que ceux avec le statut "active"
         ]
     );
 }
@@ -32,10 +32,10 @@ export const getSingleDocuments = async (documentId: string) => {
 export const getActivities = async (documentId: string) => {
     return await databases.listDocuments(
         import.meta.env.VITE_APP_ACTIVITY_DATABASE_ID,
-        '673c47ef003a877f040a',
+        import.meta.env.VITE_APP_ACTIVITY_COLLECTION_ID,
         [Query.equal('patrons', documentId),
 
-                            Query.orderDesc('$createdAt') // Ajouté : Ordonne les documents par 'createddate' en ordre décroissant
+        Query.orderDesc('$createdAt') // Ajouté : Ordonne les documents par 'createddate' en ordre décroissant
 
         ]
     );
